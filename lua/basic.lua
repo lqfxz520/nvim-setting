@@ -1,6 +1,7 @@
+vim.o.updatetime = 300
 vim.o.noswapfile = true
 vim.o.list = true
-vim.o.listchars = 'nbsp:█,tab:>~,trail:-,eol:^'
+vim.o.listchars = 'nbsp:█,tab:> ,trail:-,eol:↴'
 vim.o.clipboard = 'unnamedplus'
 vim.o.wrap = false
 vim.o.backup = false
@@ -28,10 +29,11 @@ vim.g.coc_global_extensions = {
 '@yaegassy/coc-volar'
 }
 
-
 vim.keymap.set('n', '<leader>h', '<C-w>h', {})
 vim.keymap.set('n', '<leader>j', '<C-w>j', {})
 vim.keymap.set('n', '<leader>k', '<C-w>k', {})
 vim.keymap.set('n', '<leader>l', '<C-w>l', {})
 vim.keymap.set('n', '[c', '<Cmd>cprevious<CR>', {})
 vim.keymap.set('n', ']c', '<Cmd>cnext<CR>', {})
+vim.keymap.set('n', '<A-s>', ':w<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', 'Q', ':q<CR>', { silent = true, noremap = true })

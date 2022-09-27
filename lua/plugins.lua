@@ -8,8 +8,8 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use { 'rmagatti/auto-session', config = function() 
-		require('auto-session').setup({ auto_session_suppress_dirs = { '~' }, pre_save_cmds = 'CocExplorerQuitPost'})
-	end }
+    require('auto-session').setup({ auto_session_suppress_dirs = { '~' }, pre_save_cmds = 'CocExplorerQuitPost'})
+  end }
 
   use {'neoclide/coc.nvim', branch = 'release'}
 
@@ -36,22 +36,22 @@ return require('packer').startup(function(use)
   -- Plugins can have post-install/update hooks
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
 
-	use 'tpope/vim-commentary'
+  use 'tpope/vim-commentary'
 
-	use 'JoosepAlviste/nvim-ts-context-commentstring' 
+  use 'JoosepAlviste/nvim-ts-context-commentstring' 
   -- Post-install/update hook with neovim command
   use { 
-		'nvim-treesitter/nvim-treesitter',
-		run = ':TSUpdate',
-		config = function()
-			require('nvim-treesitter.configs').setup({
-				ensure_installed = { 'lua', 'typescript', 'vue', 'css', 'scss', 'html', 'javascript', 'tsx' },
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+      require('nvim-treesitter.configs').setup({
+        ensure_installed = { 'lua', 'typescript', 'vue', 'css', 'scss', 'html', 'javascript', 'tsx' },
         highlight = { enable = true },
         context_commentstring = { enable = true },
         indent = { enable = true },
       })
-		end
-	}
+    end
+  }
 
   -- Post-install/update hook with call of vimscript function with argument
   use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
@@ -69,4 +69,13 @@ return require('packer').startup(function(use)
 
   use { 'junegunn/fzf', run = './install --all' }
 
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    config = function()
+      require('lualine').setup()
+    end
+  }
+
+  use { 'tpope/vim-fugitive', config = function() vim.keymap.set('n', '<leader>gs', '<Cmd>G<CR>', {}) end }
 end)
