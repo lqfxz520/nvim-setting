@@ -1,7 +1,7 @@
-vim.o.updatetime = 300
+vim.o.updatetime = 100
 vim.o.noswapfile = true
 vim.o.list = true
-vim.o.listchars = 'nbsp:█,tab:> ,trail:_,eol:↴'
+vim.o.listchars = 'nbsp:█,tab:> ,trail:·,eol:↴'
 vim.o.clipboard = 'unnamedplus'
 vim.o.wrap = false
 vim.o.backup = false
@@ -14,18 +14,20 @@ vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.updateTime = 300
 vim.o.relativenumber = true
+vim.o.mouse = 'nv'
 vim.o.signcolumn = 'yes'
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.g.mapleader = ' '
 vim.g.coc_global_extensions = {
-'coc-json',
-'coc-tsserver',
-'coc-eslint',
-'coc-prettier',
-'coc-yank',
-'coc-fzf-preview',
-'@yaegassy/coc-volar'
+  'coc-explorer',
+  'coc-json',
+  'coc-tsserver',
+  'coc-eslint',
+  'coc-prettier',
+  'coc-yank',
+  'coc-fzf-preview',
+  '@yaegassy/coc-volar'
 }
 
 vim.keymap.set('n', '<leader>h', '<C-w>h', {})
@@ -36,3 +38,5 @@ vim.keymap.set('n', '[c', '<Cmd>cprevious<CR>', {})
 vim.keymap.set('n', ']c', '<Cmd>cnext<CR>', {})
 vim.keymap.set('n', '<A-s>', ':w<CR>', { silent = true, noremap = true })
 vim.keymap.set('n', 'Q', ':q<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', '[<space>', ':<C-U>put! =repeat(nr2char(10), v:count1)<CR>`[', { silent = true, noremap = true })
+vim.keymap.set('n', ']<space>', ':<C-U>put =repeat(nr2char(10), v:count1)<CR>', { silent = true, noremap = true })

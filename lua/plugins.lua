@@ -30,8 +30,8 @@ return require('packer').startup(function(use)
   }
 
   -- You can specify rocks in isolation
-  use_rocks 'penlight'
-  use_rocks {'lua-resty-http', 'lpeg'}
+  -- use_rocks 'penlight'
+  -- use_rocks {'lua-resty-http', 'lpeg'}
 
   -- Plugins can have post-install/update hooks
   use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
@@ -66,6 +66,8 @@ return require('packer').startup(function(use)
   use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
 
   use { 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*' }
+
+  use { 'sainnhe/gruvbox-material' }
 
   use { 'junegunn/fzf', run = './install --all' }
 
