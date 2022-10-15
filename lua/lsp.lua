@@ -2,13 +2,31 @@ local keyset = vim.keymap.set
 keyset('n', '[d', '<Plug>(coc-diagnostic-prev)', { silent = true, noremap = true })
 keyset('n', ']d', '<Plug>(coc-diagnostic-next)', { silent = true, noremap = true })
 keyset('n', '<leader>vd', '<Plug>(coc-definition)', { silent = true, noremap = true })
+keyset("n", "vi", "<Plug>(coc-implementation)", {silent = true})
+keyset("n", "vr", "<Plug>(coc-references)", {silent = true})
 keyset('n', '<leader>ga', '<Plug>(coc-codeaction)', { silent = true, noremap = true })
 keyset('n', '<leader>vl', '<Plug>(coc-codelens-action)', { silent = true, noremap = true })
 keyset('n', '<leader>n', function() vim.fn['CocActionAsync']('format') end, { silent = false, noremap = true })
 
-function organizeImport()
-  vim.fn['CocActionAsync']('runCommand', 'editor.action.organizeImport')
-end
+-- Applying codeAction to the selected region.
+-- Example: `<leader>aap` for current paragraph
+local opts = {silent = true, nowait = true}
+keyset("x", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
+keyset("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
+
+-- Apply AutoFix to problem on the current line.
+keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
+
+-- Map function and class text objects
+-- NOTE: Requires 'textDocument.documentSymbol' support from the language server.
+keyset("x", "if", "<Plug>(coc-funcobj-i)", opts)
+keyset("o", "if", "<Plug>(coc-funcobj-i)", opts)
+keyset("x", "af", "<Plug>(coc-funcobj-a)", opts)
+keyset("o", "af", "<Plug>(coc-funcobj-a)", opts)
+keyset("x", "ic", "<Plug>(coc-classobj-i)", opts)
+keyset("o", "ic", "<Plug>(coc-classobj-i)", opts)
+keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
+keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
 
 function eslintFix()
   vim.fn['CocActionAsync']('runCommand', 'eslint.executeAutofix')
@@ -29,7 +47,8 @@ keyset("n", "K", '<Cmd>lua _G.show_docs()<CR>', {silent = true})
 
 
 vim.api.nvim_create_user_command('OR', "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
-vim.api.nvim_create_user_command('Lint', eslintFix, {})
+vim.api.nvim_create_user_command('Lint', "call CocActionAsync('runCommand', 'eslint.executeAutofix')", {})
+vim.api.nvim_create_user_command('Prettier', "call CocActionAsync('runCommand', 'prettier.forceFormatDocument')", {})
 
 -- Highlight the symbol and its references when holding the cursor.
 vim.api.nvim_create_augroup("CocGroup", {})

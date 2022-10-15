@@ -78,4 +78,7 @@ return require('packer').startup(function(use)
   }
 
   use { 'tpope/vim-fugitive', config = function() vim.keymap.set('n', '<leader>gs', '<Cmd>G<CR>', {}) end }
+
+  use 'olical/conjure'
+  use 'wlangstroth/vim-racket'
 end)

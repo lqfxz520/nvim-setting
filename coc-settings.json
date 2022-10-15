@@ -1,4 +1,16 @@
 {
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-  "codeLens.enable": true
+  "codeLens.enable": true,
+  "languageserver": {
+    "racket": {
+      "command": "racket",
+      "args": [
+        "-l",
+        "racket-langserver"
+      ],
+      "filetypes": [
+        "scheme", "rkt"
+      ]
+    }
+  }
 }

@@ -1,3 +1,3 @@
-vim.opt.background = 'light'
+vim.opt.background = 'dark'
 vim.cmd('colorscheme rose-pine')
 

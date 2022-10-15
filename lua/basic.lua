@@ -1,13 +1,12 @@
 vim.o.updatetime = 300
 vim.o.noswapfile = true
 vim.o.list = true
-vim.o.listchars = 'nbsp:█,tab:> ,trail:-,eol:↴'
+vim.o.listchars = 'nbsp:█,tab:> ,trail:_,eol:↴'
 vim.o.clipboard = 'unnamedplus'
 vim.o.wrap = false
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.undofile = true
-vim.o.undodir = '~/.vim/undodir'
 vim.o.termguicolors = true
 vim.o.expandtab = true
 vim.o.tabstop = 2

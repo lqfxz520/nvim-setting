@@ -1,5 +1,4 @@
 vim.keymap.set({ 'x', 'n' }, '<leader>f', [[fzf-p]], {})
-vim.keymap.set('n', '<leader>f/', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="]'"<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>fp', [[:<C-u>CocCommand fzf-preview.FromResources project_mru git --resume<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>fgs', [[:<C-u>CocCommand fzf-preview.GitStatus<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>fga', [[:<C-u>CocCommand fzf-preview.GitActions<CR>]], { silent = true, noremap = true })
@@ -11,6 +10,7 @@ vim.keymap.set({'n'}, '<leader>fg;', [[:<C-u>CocCommand fzf-preview.Changes<CR>]
 vim.keymap.set({'n'}, '<leader>f/', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>f*', [[:<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>fgr', [[:<C-u>CocCommand fzf-preview.ProjectGrep<Space>]], { silent = true, noremap = true })
+vim.keymap.set({'n'}, '<leader>pw', [[:<C-u>CocCommand fzf-preview.ProjectGrep<Space><C-r>=expand('<cword>')<CR><CR>]], { silent = true, noremap = true })
 vim.keymap.set({'x'}, '<leader>fgr', [["sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>ft', [[:<C-u>CocCommand fzf-preview.BufferTags<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>fq', [[:<C-u>CocCommand fzf-preview.QuickFix<CR>]], { silent = true, noremap = true })
