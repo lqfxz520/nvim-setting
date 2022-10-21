@@ -15,3 +15,25 @@ vim.keymap.set({'x'}, '<leader>fgr', [["sy:CocCommand   fzf-preview.ProjectGrep<
 vim.keymap.set({'n'}, '<leader>ft', [[:<C-u>CocCommand fzf-preview.BufferTags<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>fq', [[:<C-u>CocCommand fzf-preview.QuickFix<CR>]], { silent = true, noremap = true })
 vim.keymap.set({'n'}, '<leader>fl', [[:<C-u>CocCommand fzf-preview.LocationList<CR>]], { silent = true, noremap = true })
+vim.keymap.set({'n'}, '<leader>ph', [[:<C-u>CocCommand fzf-preview.GrepHelp<CR>]], { silent = true, noremap = true })
+
+vim.api.nvim_create_augroup("CocGroup", {})
+vim.api.nvim_create_autocmd("CursorHold", {
+    group = "CocGroup",
+    command = "silent call CocActionAsync('highlight')",
+    desc = "Highlight symbol under cursor on CursorHold"
+})
+
+-- vim.api.nvim_create_augroup("fzf_preview", {})
+
+-- function fzf_preview_settings()
+--   vim.g.fzf_preview_command = 'COLORTERM=truecolor ' .. vim.g.fzf_preview_command
+--   print(vim.g.fzf_preview_command)
+--   vim.g.fzf_preview_grep_preview_cmd = 'COLORTERM=truecolor ' .. vim.g.fzf_preview_grep_preview_cmd
+-- end
+
+-- vim.api.nvim_create_autocmd("User fzf_preview#rpc#initialized", {
+--   group = "fzf_preview",
+--   command = "!",
+--   callback = fzf_preview_settings
+-- })

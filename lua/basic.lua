@@ -19,6 +19,7 @@ vim.o.signcolumn = 'yes'
 vim.o.autoindent = true
 vim.o.smartindent = true
 vim.g.mapleader = ' '
+vim.o.pumheight = 20
 vim.g.coc_global_extensions = {
   'coc-explorer',
   'coc-json',
@@ -27,7 +28,8 @@ vim.g.coc_global_extensions = {
   'coc-prettier',
   'coc-yank',
   'coc-fzf-preview',
-  '@yaegassy/coc-volar'
+  '@yaegassy/coc-volar',
+  'coc-pairs'
 }
 
 vim.keymap.set('n', '<leader>h', '<C-w>h', {})
@@ -40,3 +42,4 @@ vim.keymap.set('n', '<A-s>', ':w<CR>', { silent = true, noremap = true })
 vim.keymap.set('n', 'Q', ':q<CR>', { silent = true, noremap = true })
 vim.keymap.set('n', '[<space>', ':<C-U>put! =repeat(nr2char(10), v:count1)<CR>`[', { silent = true, noremap = true })
 vim.keymap.set('n', ']<space>', ':<C-U>put =repeat(nr2char(10), v:count1)<CR>', { silent = true, noremap = true })
+vim.keymap.set('i', '<CR>', '<C-g>u<CR><c-r>=coc#on_enter()<CR>', { silent = true, noremap = true, expr = false })

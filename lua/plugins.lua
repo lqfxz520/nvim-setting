@@ -83,4 +83,12 @@ return require('packer').startup(function(use)
 
   use 'olical/conjure'
   use 'wlangstroth/vim-racket'
+
+  use {'akinsho/bufferline.nvim',
+    config = function()
+      require('bufferline').setup{}
+    end,
+    tag = "v3.*",
+    requires = 'kyazdani42/nvim-web-devicons'
+  }
 end)
