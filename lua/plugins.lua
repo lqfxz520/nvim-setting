@@ -8,7 +8,10 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use { 'rmagatti/auto-session', config = function() 
-    require('auto-session').setup({ auto_session_suppress_dirs = { '~' }, pre_save_cmds = 'CocExplorerQuitPost'})
+    vim.opt.sessionoptions = 'curdir,folds,help,tabpages,terminal,winsize'
+    require('auto-session').setup{
+      auto_session_suppress_dirs = { '~' },
+    }
   end }
 
   use {'neoclide/coc.nvim', branch = 'release'}
@@ -86,7 +89,35 @@ return require('packer').startup(function(use)
 
   use {'akinsho/bufferline.nvim',
     config = function()
-      require('bufferline').setup{}
+      local bufferline = require('bufferline')
+      bufferline.setup{
+        options = {
+          -- mode = 'tabs',
+          diagnostics = 'coc',
+          sort_by = 'insert_at_end',
+          offsets = {
+            {
+              filetype = "coc-explorer",
+              text = function() return vim.fn.getcwd() end,
+              text_align = "left",
+              highlight = "Directory",
+              separator = true
+            }
+          },
+        }
+      }
+
+      local opt = { noremap = true }
+      vim.keymap.set('n', '<A-1>', '<Cmd>BufferLineGoToBuffer 1<CR>', opt)
+      vim.keymap.set('n', '<A-2>', '<Cmd>BufferLineGoToBuffer 2<CR>', opt)
+      vim.keymap.set('n', '<A-3>', '<Cmd>BufferLineGoToBuffer 3<CR>', opt)
+      vim.keymap.set('n', '<A-4>', '<Cmd>BufferLineGoToBuffer 4<CR>', opt)
+      vim.keymap.set('n', '<A-5>', '<Cmd>BufferLineGoToBuffer 5<CR>', opt)
+      vim.keymap.set('n', '<A-6>', '<Cmd>BufferLineGoToBuffer 6<CR>', opt)
+      vim.keymap.set('n', '<leader>;', '<Cmd>BufferLinePick<CR>', opt)
+      vim.keymap.set('n', 'Q', function()
+        vim.cmd('bdelete %')
+      end, { silent = true, noremap = true })
     end,
     tag = "v3.*",
     requires = 'kyazdani42/nvim-web-devicons'

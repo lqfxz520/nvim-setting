@@ -2,7 +2,7 @@
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
   "codeLens.enable": false,
   "suggest.floatConfig": { "rounded": true, "winblend": 10 },
-  "suggest.virtualText": true,
+  "suggest.virtualText": false,
   "languageserver": {
     "racket": {
       "command": "racket",
