@@ -18,11 +18,11 @@ vim.keymap.set({'n'}, '<leader>fl', [[:<C-u>CocCommand fzf-preview.LocationList<
 vim.keymap.set({'n'}, '<leader>ph', [[:<C-u>CocCommand fzf-preview.GrepHelp<CR>]], { silent = true, noremap = true })
 
 vim.api.nvim_create_augroup("CocGroup", {})
-vim.api.nvim_create_autocmd("CursorHold", {
-    group = "CocGroup",
-    command = "silent call CocActionAsync('highlight')",
-    desc = "Highlight symbol under cursor on CursorHold"
-})
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--     group = "CocGroup",
+--     command = "silent call CocActionAsync('highlight')",
+--     desc = "Highlight symbol under cursor on CursorHold"
+-- })
 
 -- vim.api.nvim_create_augroup("fzf_preview", {})
 

@@ -41,10 +41,15 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-commentary'
 
-  use 'JoosepAlviste/nvim-ts-context-commentstring' 
+  use 'JoosepAlviste/nvim-ts-context-commentstring'
   -- Post-install/update hook with neovim command
-  use { 
+  use {
     'nvim-treesitter/nvim-treesitter',
+    requries = {
+      'andymass/vim-matchup',
+      'kevinhwang91/nvim-ufo',
+      'andymass/vim-matchup'
+    },
     run = ':TSUpdate',
     config = function()
       require('nvim-treesitter.configs').setup({
@@ -52,6 +57,13 @@ return require('packer').startup(function(use)
         highlight = { enable = true },
         context_commentstring = { enable = true },
         indent = { enable = true },
+        matchup = { enable = true },
+      })
+
+      require('ufo').setup({
+        provider_selector = function()
+          return {'treesitter', 'indent'}
+        end
       })
     end
   }
@@ -78,7 +90,12 @@ return require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function()
-      require('lualine').setup()
+      require('lualine').setup{ 
+        options = {
+          disabled_filetypes = {'coc-explorer'}
+        },
+        sections = { lualine_c = { {'filename', path = 1} } }
+      }
     end
   }
 
@@ -122,4 +139,11 @@ return require('packer').startup(function(use)
     tag = "v3.*",
     requires = 'kyazdani42/nvim-web-devicons'
   }
+
+  use {
+    'kevinhwang91/nvim-ufo',
+    requires = 'kevinhwang91/promise-async'
+  }
+  
+  use 'kshenoy/vim-signature'
 end)
