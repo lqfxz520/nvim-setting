@@ -60,6 +60,8 @@ return require('packer').startup(function(use)
         matchup = { enable = true },
       })
 
+      vim.g.matchup_matchparen_offscreen = { method = 'popup', highlight = 'Normal', fullwidth = 1 }
+
       require('ufo').setup({
         provider_selector = function()
           return {'treesitter', 'indent'}
@@ -134,7 +136,7 @@ return require('packer').startup(function(use)
       vim.keymap.set('n', '<leader>;', '<Cmd>BufferLinePick<CR>', opt)
       vim.keymap.set('n', 'Q', function()
         vim.cmd('bdelete %')
-      end, { silent = true, noremap = true })
+      end, { noremap = true })
     end,
     tag = "v3.*",
     requires = 'kyazdani42/nvim-web-devicons'

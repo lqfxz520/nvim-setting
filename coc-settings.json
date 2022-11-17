@@ -14,5 +14,8 @@
         "scheme", "rkt"
       ]
     }
-  }
+  },
+  "volar.takeOverMode.enabled": true,
+  "volar.autoClosingTags": true,
+  "explorer.icon.enableNerdfont": true
 }

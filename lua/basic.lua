@@ -33,7 +33,8 @@ vim.g.coc_global_extensions = {
   'coc-yank',
   'coc-fzf-preview',
   '@yaegassy/coc-volar',
-  'coc-pairs'
+  'coc-pairs',
+  'coc-snippets'
 }
 
 vim.keymap.set('n', '<leader>h', '<C-w>h', {})
@@ -47,3 +48,9 @@ vim.keymap.set('n', '[<space>', ':<C-U>put! =repeat(nr2char(10), v:count1)<CR>`[
 vim.keymap.set('n', ']<space>', ':<C-U>put =repeat(nr2char(10), v:count1)<CR>', { silent = true, noremap = true })
 vim.keymap.set('i', '<CR>', '<C-g>u<CR><c-r>=coc#on_enter()<CR>', { silent = true, noremap = true, expr = false })
 vim.keymap.set('v', '<leader>d', '"_d', { silent = true, noremap = true })
+vim.keymap.set('n', '<leader>gh', ':diffget //3<CR>', {})
+vim.keymap.set('n', '<leader>gu', ':diffget //2<CR>', {})
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv", {})
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv", {})
+vim.keymap.set('v', '>', '>gv', {})
+vim.keymap.set('v', '<', '<gv', {})
