@@ -14,5 +14,8 @@
         "scheme", "rkt"
       ]
     }
-  }
+  },
+  "emmet.showExpandedAbbreviation": "never",
+  "yank.priority": 10,
+  "snippets.ultisnips.pythonPrompt": false
 }

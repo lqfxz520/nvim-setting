@@ -7,6 +7,7 @@ keyset("n", "<leader>vr", "<Plug>(coc-references)", {silent = true})
 keyset('n', '<leader>ga', '<Plug>(coc-codeaction)', { silent = true, noremap = true })
 keyset('n', '<leader>vl', '<Plug>(coc-codelens-action)', { silent = true, noremap = true })
 keyset('n', '<leader>n', function() vim.fn['CocActionAsync']('format') end, { silent = false, noremap = true })
+keyset("i", "<c-j>", "<Plug>(coc-snippets-expand-jump)")
 
 -- Applying codeAction to the selected region.
 -- Example: `<leader>aap` for current paragraph
@@ -28,6 +29,15 @@ keyset("o", "ic", "<Plug>(coc-classobj-i)", opts)
 keyset("x", "ac", "<Plug>(coc-classobj-a)", opts)
 keyset("o", "ac", "<Plug>(coc-classobj-a)", opts)
 
+local opts = {silent = true, nowait = true, expr = true}
+keyset("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
+keyset("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
+keyset("i", "<C-f>",
+       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
+keyset("i", "<C-b>",
+       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
+keyset("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
+keyset("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 function eslintFix()
   vim.fn['CocActionAsync']('runCommand', 'eslint.executeAutofix')
 end
