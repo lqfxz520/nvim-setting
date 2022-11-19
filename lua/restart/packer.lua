@@ -9,26 +9,26 @@ return require('packer').startup(function(use)
 
   use 'rmagatti/auto-session'
 
-  use {'neoclide/coc.nvim', branch = 'release'}
+  use { 'neoclide/coc.nvim', branch = 'release' }
 
   -- Lazy loading:
   -- Load on specific commands
-  use {'tpope/vim-dispatch', opt = true, cmd = {'Dispatch', 'Make', 'Focus', 'Start'}}
+  use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
 
   -- Load on an autocommand event
-  use {'andymass/vim-matchup', event = 'VimEnter'}
+  use { 'andymass/vim-matchup', event = 'VimEnter' }
 
   -- Load on a combination of conditions: specific filetypes or commands
   -- Also run code after load (see the "config" key)
   use {
     'w0rp/ale',
-    ft = {'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex'},
+    ft = { 'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex' },
     cmd = 'ALEEnable',
     config = 'vim.cmd[[ALEEnable]]'
   }
 
   -- Plugins can have post-install/update hooks
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
 
   use 'tpope/vim-commentary'
 
@@ -66,8 +66,8 @@ return require('packer').startup(function(use)
 
   use 'tpope/vim-fugitive'
 
-  use 'olical/conjure'
-  use 'wlangstroth/vim-racket'
+  -- use 'olical/conjure'
+  -- use 'wlangstroth/vim-racket'
 
   use {
     'akinsho/bufferline.nvim',
@@ -79,6 +79,8 @@ return require('packer').startup(function(use)
     'kevinhwang91/nvim-ufo',
     requires = 'kevinhwang91/promise-async'
   }
-  
+
   use 'kshenoy/vim-signature'
+
+  use 'rcarriga/nvim-notify'
 end)

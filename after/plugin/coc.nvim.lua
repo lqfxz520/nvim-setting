@@ -22,7 +22,6 @@ vim.g.coc_global_extensions = {
   'coc-snippets'
 }
 
-local keyset = vim.keymap.set
 local opt = { silent = true }
 nnoremap('[d', '<Plug>(coc-diagnostic-prev)', opt)
 nnoremap(']d', '<Plug>(coc-diagnostic-next)', opt)
@@ -65,8 +64,9 @@ vnoremap("<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opt)
 
 -- Use K to show documentation in preview window.
 function _G.show_docs()
+    print('show_docs')
     local cw = vim.fn.expand('<cword>')
-    if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+    if vim.fn.index({'vim', 'help', 'lua'}, vim.bo.filetype) >= 0 then
         vim.api.nvim_command('h ' .. cw)
     elseif vim.api.nvim_eval('coc#rpc#ready()') then
         vim.fn.CocActionAsync('doHover')
@@ -83,16 +83,17 @@ function _G.check_back_space()
 end
 
 function _G.refresh_or_expand()
+  print('test')
   if _G.check_back_space() then
     vim.api.nvim_eval('coc#refresh()')
   elseif vim.api.nvim_eval('coc#expandable()') then
     vim.api.nvim_eval('<Plug>(coc-snippets-expand)>')
   elseif vim.fn.index({'html', 'typescript', 'javascriptreact', 'css', 'less', 'vue'}, vim.bo.filetype) >= 0 then
-    vim.api.nvim_eval('<c-o>:CocCommand emmet.expand-abbreviation<CR>')
+    vim.api.nvim_command('CocCommand emmet.expand-abbreviation')
   end
 end
 
-inoremap('<c-j>', '<CMD>lua _G.refresh_or_expand()<CR>', { silent = truej })
+inoremap('<c-j>', '<Cmd>lua _G.refresh_or_expand()<CR>')
 
 vim.api.nvim_create_user_command('OR', "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 vim.api.nvim_create_user_command('Lint', "call CocActionAsync('runCommand', 'eslint.executeAutofix')", {})

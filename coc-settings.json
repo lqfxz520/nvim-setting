@@ -17,5 +17,9 @@
   },
   "emmet.showExpandedAbbreviation": "never",
   "yank.priority": 10,
-  "snippets.ultisnips.pythonPrompt": false
+  "snippets.ultisnips.pythonPrompt": false,
+  "npm.binPath": "cnpm",
+  "Lua.telemetry.enable": true,
+  "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.hint.enable": false
 }
