@@ -1,4 +1,3 @@
-vim.o.updatetime = 100
 vim.o.noswapfile = true
 vim.o.list = true
 vim.o.listchars = 'nbsp:█,tab:> ,trail:·,eol:↴'
@@ -14,6 +13,7 @@ vim.o.shiftwidth = 2
 vim.o.softtabstop = 2
 vim.o.updateTime = 300
 vim.o.relativenumber = true
+vim.o.number = true
 vim.o.mouse = 'nv'
 vim.o.signcolumn = 'yes'
 vim.o.autoindent = true

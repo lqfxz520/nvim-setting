@@ -36,6 +36,7 @@ inoremap('<CR>', '<C-g>u<CR><c-r>=coc#on_enter()<CR>', { silent = true, expr = f
 
 -- Applying codeAction to the selected region.
 -- Example: `<leader>aap` for current paragraph
+---@diagnostic disable-next-line: redefined-local
 local opts = {silent = true, nowait = true}
 xnoremap("<leader>a", "<Plug>(coc-codeaction-selected)", opt)
 nnoremap("<leader>a", "<Plug>(coc-codeaction-selected)", opt)
@@ -54,7 +55,8 @@ onoremap("ac", "<Plug>(coc-classobj-a)", opt)
 xnoremap("ac", "<Plug>(coc-classobj-a)", opt)
 onoremap("ac", "<Plug>(coc-classobj-a)", opt)
 
-local opt = {silent = true, nowait = true, expr = true}
+---@diagnostic disable-next-line: redefined-local
+local opt = {silent = true, nowait = true, expr = true, replace_keycodes = false}
 nnoremap("<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opt)
 nnoremap("<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opt)
 inoremap("<C-f>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opt)
@@ -83,13 +85,13 @@ function _G.check_back_space()
 end
 
 function _G.refresh_or_expand()
-  print('test')
+  print(_G.check_back_space())
   if _G.check_back_space() then
     vim.api.nvim_eval('coc#refresh()')
   elseif vim.api.nvim_eval('coc#expandable()') then
     vim.api.nvim_eval('<Plug>(coc-snippets-expand)>')
   elseif vim.fn.index({'html', 'typescript', 'javascriptreact', 'css', 'less', 'vue'}, vim.bo.filetype) >= 0 then
-    vim.api.nvim_command('CocCommand emmet.expand-abbreviation')
+    return vim.api.nvim_command('CocCommand emmet.expand-abbreviation')
   end
 end
 

@@ -83,4 +83,13 @@ return require('packer').startup(function(use)
   use 'kshenoy/vim-signature'
 
   use 'rcarriga/nvim-notify'
+
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2'
+  }
+
+  use {
+    'gelguy/wilder.nvim',
+  }
 end)
