@@ -108,3 +108,10 @@ vim.api.nvim_create_autocmd("CursorHold", {
     command = "silent call CocActionAsync('highlight')",
     desc = "Highlight symbol under cursor on CursorHold"
 })
+-- Update signature help on jump placeholder.
+-- vim.api.nvim_create_autocmd("User", {
+--     group = "CocGroup",
+--     pattern = "CocJumpPlaceholder",
+--     command = "call CocActionAsync('showSignatureHelp')",
+--     desc = "Update signature help on jump placeholder"
+-- })
