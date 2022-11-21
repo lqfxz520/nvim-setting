@@ -7,7 +7,9 @@ vim.keymap.set(
 
 require("noice").setup({
   -- add any options here
-  cmdline = {
-    view = 'cmdline'
-  }
+  -- cmdline = {
+  --   format = {
+  --     cmdline = { view = 'cmdline_popup', pattern = "^:", icon = "", lang = "vim" },
+  --   }
+  -- }
 })
