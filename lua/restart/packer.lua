@@ -104,4 +104,6 @@ return require('packer').startup(function(use)
       "rcarriga/nvim-notify",
     }
   })
+
+  use 'NvChad/nvim-colorizer.lua'
 end)

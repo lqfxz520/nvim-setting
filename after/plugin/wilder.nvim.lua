@@ -4,7 +4,7 @@ wilder.setup({ modes = { ':', '/', '?' } })
 wilder.set_option('pipeline', {
   wilder.branch(
     wilder.cmdline_pipeline(),
-    wilder.search_pipeline()
+    wilder.python_search_pipeline()
   ),
 })
 
