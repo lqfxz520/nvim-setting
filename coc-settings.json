@@ -1,28 +1,24 @@
 {
+  "npm.binPath": "cnpm",
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
-  "codeLens.enable": false,
-  "suggest.floatConfig": { "rounded": true, "winblend": 10 },
+  "codeLens.enable": true,
+
+  "suggest.floatConfig": { "rounded": true, "winblend": 8 },
   "suggest.virtualText": false,
-  "languageserver": {
-    "racket": {
-      "command": "racket",
-      "args": [
-        "-l",
-        "racket-langserver"
-      ],
-      "filetypes": [
-        "scheme", "rkt"
-      ]
-    }
-  },
+
   "emmet.showExpandedAbbreviation": "never",
+
   "yank.priority": 10,
   "yank.highlight.enable": false,
+
   "snippets.ultisnips.pythonPrompt": false,
-  "npm.binPath": "cnpm",
-  "Lua.telemetry.enable": true,
+
   "sumneko-lua.enableNvimLuaDev": true,
+  "Lua.telemetry.enable": true,
   "Lua.hint.enable": false,
+
+  "volar.takeOverMode.enabled": true,
+
   "suggest.completionItemKindLabels": {
     "keyword":       "\uf1de",
     "variable":      "\ue79b",
@@ -49,5 +45,17 @@
     "snippet":       "\ue60b",
     "typeParameter": "\uf728",
     "default":       "\uf29c"
+  },
+  "languageserver": {
+    "racket": {
+      "command": "racket",
+      "args": [
+        "-l",
+        "racket-langserver"
+      ],
+      "filetypes": [
+        "scheme", "rkt"
+      ]
+    }
   }
 }

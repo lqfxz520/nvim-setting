@@ -7,4 +7,7 @@ vim.keymap.set(
 
 require("noice").setup({
   -- add any options here
+  cmdline = {
+    view = 'cmdline'
+  }
 })

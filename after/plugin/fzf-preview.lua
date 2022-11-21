@@ -1,9 +1,9 @@
 local Remap = require("restart.keymap")
 local nnoremap = Remap.nnoremap
 local xnoremap = Remap.xnoremap
-local opt = { silent = true, noremap = true }
+local opt = { silent = true }
 -- vim.keymap.set({ 'x', 'n' }, '<leader>f', [[fzf-p]], {})
-nnoremap('<leader>fp', [[:<C-u>CocCommand fzf-preview.FromResources project_mru git --resume<CR>]], opt)
+nnoremap('<C-P>', [[:<C-u>CocCommand fzf-preview.FromResources project_mru git --resume<CR>]], opt)
 nnoremap('<leader>fgs', [[:<C-u>CocCommand fzf-preview.GitStatus<CR>]], opt)
 nnoremap('<leader>fga', [[:<C-u>CocCommand fzf-preview.GitActions<CR>]], opt)
 nnoremap('<leader>fb', [[:<C-u>CocCommand fzf-preview.Buffers<CR>]], opt)
