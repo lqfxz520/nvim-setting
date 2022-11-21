@@ -19,7 +19,8 @@ vim.g.coc_global_extensions = {
   'coc-fzf-preview',
   '@yaegassy/coc-volar',
   'coc-pairs',
-  'coc-snippets'
+  'coc-snippets',
+  'coc-sumneko-lua'
 }
 
 local opt = { silent = true }
@@ -66,7 +67,6 @@ vnoremap("<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opt)
 
 -- Use K to show documentation in preview window.
 function _G.show_docs()
-    print('show_docs')
     local cw = vim.fn.expand('<cword>')
     if vim.fn.index({'vim', 'help', 'lua'}, vim.bo.filetype) >= 0 then
         vim.api.nvim_command('h ' .. cw)
@@ -85,7 +85,6 @@ function _G.check_back_space()
 end
 
 function _G.refresh_or_expand()
-  print(_G.check_back_space())
   if _G.check_back_space() then
     vim.api.nvim_eval('coc#refresh()')
   elseif vim.api.nvim_eval('coc#expandable()') then
