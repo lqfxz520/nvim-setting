@@ -85,7 +85,7 @@ end
 
 function _G.refresh_or_expand()
   if not (check_back_space()) then
-    return vim.api.nvim_eval('coc#start()')
+    return vim.api.nvim_call_function('coc#start', {})
   elseif vim.api.nvim_eval('coc#expandable()') then
     vim.api.nvim_eval('<Plug>(coc-snippets-expand-jump)>')
   elseif vim.fn.index({ 'html', 'typescript', 'javascriptreact', 'css', 'less', 'vue' }, vim.bo.filetype) >= 0 then
