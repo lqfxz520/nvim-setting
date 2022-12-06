@@ -28,7 +28,8 @@ return require('packer').startup(function(use)
   }
 
   -- Plugins can have post-install/update hooks
-  use { 'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview' }
+  use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install',
+    setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
 
   use 'tpope/vim-commentary'
 
@@ -106,4 +107,14 @@ return require('packer').startup(function(use)
   })
 
   use 'NvChad/nvim-colorizer.lua'
+
+  use {
+    "kylechui/nvim-surround",
+    tag = "*"
+  }
+
+  use {
+  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+  requires = {'nvim-lua/plenary.nvim'}
+}
 end)

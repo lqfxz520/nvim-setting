@@ -18,6 +18,7 @@ nnoremap("<leader>y", "\"+y")
 vnoremap("<leader>y", "\"+y")
 xnoremap("<leader>p", "\"_dP")
 nnoremap('x', '"_x', opt)
+vnoremap('x', '"_x', opt)
 
 vnoremap('J', ":m'>+1<CR>gv=gv", opt)
 vnoremap('K', ":m '<-2<CR>gv=gv", opt)
