@@ -96,6 +96,7 @@ end
 
 inoremap('<c-\\>', "<Cmd>CocCommand emmet.expand-abbreviation<CR>", {silent=true})
 inoremap('<c-j>', 'v:lua.refresh_or_expand()', { silent = true, expr = true })
+nnoremap("<leader>rn", "<Plug>(coc-rename)", {silent = true})
 
 vim.api.nvim_create_user_command('OR', "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
 vim.api.nvim_create_user_command('Lint', "call CocActionAsync('runCommand', 'eslint.executeAutofix')", {})
