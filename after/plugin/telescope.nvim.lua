@@ -7,7 +7,36 @@ if not status then
   return
 end
 
+local previews = require('telescope.previewers')
+local _bad = { '.*%.min' }
+local bad_files = function(filepath)
+  for _, v in ipairs(_bad) do
+    if filepath:match(v) then
+      return true
+    end
+  end
+
+  return false
+end
+local new_maker = function(filepath, bufnr, opts)
+  opts = opts or {}
+  if bad_files(filepath) then
+    return
+  end
+  filepath = vim.fn.expand(filepath)
+  vim.loop.fs_stat(filepath, function(_, stat)
+    if not stat then return end
+    if stat.size > 100000 then
+      return
+    else
+      previews.buffer_previewer_maker(filepath, bufnr, opts)
+    end
+  end)
+end
 telescope.setup({
+  defaults = {
+    buffer_previewer_maker = new_maker
+  },
   pickers = {
     -- Built-in pickers configuration
     find_files = {
