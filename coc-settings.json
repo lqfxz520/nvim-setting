@@ -7,8 +7,6 @@
   "suggest.floatConfig": { "rounded": true, "winblend": 8 },
   "suggest.virtualText": false,
 
-  "emmet.showExpandedAbbreviation": "never",
-
   "yank.priority": 10,
   "yank.highlight.enable": false,
 
@@ -17,6 +15,7 @@
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.telemetry.enable": true,
   "Lua.hint.enable": false,
+  "semanticTokens.enable": true,
 
   "volar.takeOverMode.enabled": true,
 

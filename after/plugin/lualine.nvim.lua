@@ -1,6 +1,9 @@
 require('lualine').setup {
   options = {
-    disabled_filetypes = { 'coc-explorer' }
+    ignore_focus = { 'coc-explorer' }
   },
-  sections = { lualine_c = { { 'filename', path = 1 } } }
+  sections = {
+    lualine_a = { 'g:coc_status', 'mode' },
+    lualine_c = { { 'filename', path = 1 } }
+  }
 }
