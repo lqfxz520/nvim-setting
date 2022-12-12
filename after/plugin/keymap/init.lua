@@ -22,3 +22,5 @@ vnoremap('x', '"_x', opt)
 
 vnoremap('J', ":m'>+1<CR>gv=gv", opt)
 vnoremap('K', ":m '<-2<CR>gv=gv", opt)
+vnoremap('>', ">gv", opt)
+vnoremap('<', "<gv", opt)

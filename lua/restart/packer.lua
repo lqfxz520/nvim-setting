@@ -16,7 +16,7 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-dispatch', opt = true, cmd = { 'Dispatch', 'Make', 'Focus', 'Start' } }
 
   -- Load on an autocommand event
-  use { 'andymass/vim-matchup', event = 'VimEnter' }
+  use { 'andymass/vim-matchup' }
 
   -- Load on a combination of conditions: specific filetypes or commands
   -- Also run code after load (see the "config" key)

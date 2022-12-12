@@ -18,7 +18,8 @@ vim.g.coc_global_extensions = {
   'coc-pairs',
   'coc-snippets',
   'coc-sumneko-lua',
-  'coc-utools'
+  'coc-utools',
+  'coc-git'
 }
 
 local opt = { silent = true }
