@@ -75,3 +75,4 @@ local opt = { silent = true }
 nnoremap("<C-p>", function() project_files() end, opt)
 -- Global search
 nnoremap("<leader>fgr", ":Telescope live_grep<CR>", opt)
+nnoremap("<leader>pb", ":Telescope buffers<CR>", opt)

@@ -64,6 +64,8 @@ inoremap("<C-b>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<
 vnoremap("<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
 vnoremap("<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
+vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
+
 -- Use K to show documentation in preview window.
 function _G.show_docs()
   local cw = vim.fn.expand('<cword>')

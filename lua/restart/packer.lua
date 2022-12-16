@@ -51,7 +51,7 @@ return require('packer').startup(function(use)
   -- Use dependency and run lua function after load
   use {
     'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
+    -- config = function() require('gitsigns').setup() end
   }
 
   use { 'rose-pine/neovim', as = 'rose-pine', tag = 'v1.*' }
@@ -114,7 +114,7 @@ return require('packer').startup(function(use)
   }
 
   use {
-  'nvim-telescope/telescope.nvim', tag = '0.1.0',
-  requires = {'nvim-lua/plenary.nvim'}
-}
+    'nvim-telescope/telescope.nvim', tag = '0.1.0',
+    requires = { 'nvim-lua/plenary.nvim' }
+  }
 end)
