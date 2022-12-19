@@ -4,10 +4,10 @@ local vnoremap = Remap.vnoremap
 local xnoremap = Remap.xnoremap
 
 local opt = { silent = true }
-nnoremap('<leader>h', '<C-w>h', opt)
-nnoremap('<leader>j', '<C-w>j', opt)
-nnoremap('<leader>k', '<C-w>k', opt)
-nnoremap('<leader>l', '<C-w>l', opt)
+-- nnoremap('<leader>h', '<C-w>h', opt)
+-- nnoremap('<leader>j', '<C-w>j', opt)
+-- nnoremap('<leader>k', '<C-w>k', opt)
+-- nnoremap('<leader>l', '<C-w>l', opt)
 nnoremap('[c', '<Cmd>cprevious<CR>', opt)
 nnoremap(']c', '<Cmd>cnext<CR>', opt)
 nnoremap('<A-s>', ':w<CR>', opt)
