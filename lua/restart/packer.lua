@@ -121,4 +121,8 @@ return require('packer').startup(function(use)
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   use('mrjones2014/smart-splits.nvim')
+
+  use 'joshdick/onedark.vim'
+
+  use 'sainnhe/edge'
 end)
