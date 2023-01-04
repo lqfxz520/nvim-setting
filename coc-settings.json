@@ -64,5 +64,6 @@
         "scheme", "rkt"
       ]
     }
-  }
+  },
+  "git.enableGutters": true
 }

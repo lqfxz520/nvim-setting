@@ -125,4 +125,6 @@ return require('packer').startup(function(use)
   use 'joshdick/onedark.vim'
 
   use 'sainnhe/edge'
+
+  use 'lukas-reineke/indent-blankline.nvim'
 end)
