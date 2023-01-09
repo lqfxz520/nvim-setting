@@ -1,6 +1,7 @@
 {
   "npm.binPath": "cnpm",
   "coc.preferences.currentFunctionSymbolAutoUpdate": true,
+  "explorer.icon.enableNerdfont": true,
   "codeLens.enable": true,
   "eslint.autoFixOnSave": true,
 

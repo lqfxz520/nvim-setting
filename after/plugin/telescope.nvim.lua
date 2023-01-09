@@ -46,8 +46,23 @@ telescope.setup({
   },
   extensions = {
     -- Extensions
+    file_browser = {
+      theme = "dropdown",
+      -- disables netrw and use telescope-file-browser in its place
+      hijack_netrw = true,
+      mappings = {
+        ["i"] = {
+          -- your custom insert mode mappings
+        },
+        ["n"] = {
+          -- your custom normal mode mappings
+        },
+      },
+    }
   },
 })
+
+telescope.load_extension "file_browser"
 
 local project_files = function()
   local opts = {}
@@ -76,3 +91,12 @@ nnoremap("<C-p>", function() project_files() end, opt)
 -- Global search
 nnoremap("<leader>fgr", ":Telescope live_grep<CR>", opt)
 nnoremap("<leader>pb", ":Telescope buffers<CR>", opt)
+nnoremap("<leader>ff", function()
+  telescope.extensions.file_browser.file_browser({
+    path = "%:p:h",
+    grouped = true,
+    previewer = false,
+    layout_config = { height = 40 },
+    initial_mode = "normal"
+  })
+end)

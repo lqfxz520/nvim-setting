@@ -118,6 +118,8 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
 
+  use { "nvim-telescope/telescope-file-browser.nvim" }
+
   use { 'TimUntersberger/neogit', requires = 'nvim-lua/plenary.nvim' }
 
   use('mrjones2014/smart-splits.nvim')
