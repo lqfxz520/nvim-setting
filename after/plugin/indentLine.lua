@@ -7,7 +7,7 @@ local api = vim.api
 local exclude_ft = { "help", "coc-explorer" }
 
 indent_blankline.setup({
-  char = "▏",
+  char = "│",
   filetype_exclude = exclude_ft
 })
 

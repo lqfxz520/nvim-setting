@@ -7,8 +7,6 @@ return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use 'rmagatti/auto-session'
-
   use { 'neoclide/coc.nvim', branch = 'release' }
 
   -- Lazy loading:
@@ -129,4 +127,8 @@ return require('packer').startup(function(use)
   use 'sainnhe/edge'
 
   use 'lukas-reineke/indent-blankline.nvim'
+
+  use { "lervag/vimtex", ft = { "tex" } }
+
+  use { 'Shatur/neovim-session-manager', requires = { 'nvim-lua/plenary.nvim' } }
 end)
