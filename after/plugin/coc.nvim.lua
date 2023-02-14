@@ -19,7 +19,8 @@ vim.g.coc_global_extensions = {
   'coc-snippets',
   'coc-sumneko-lua',
   'coc-utools',
-  'coc-git'
+  'coc-git',
+  'coc-html'
 }
 
 local opt = { silent = true }
@@ -31,7 +32,7 @@ nnoremap("<leader>vr", "<Plug>(coc-references)", opt)
 nnoremap('<leader>ga', '<Plug>(coc-codeaction)', opt)
 nnoremap('<leader>vl', '<Plug>(coc-codelens-action)', opt)
 nnoremap('<leader>n', function() vim.fn['CocActionAsync']('format') end, opt)
--- inoremap('<c-j>', '<Plug>(coc-snippets-expand-jump)', opt)
+inoremap('<c-l>', '<Plug>(coc-snippets-expand)', opt)
 inoremap('<CR>', '<C-g>u<CR><c-r>=coc#on_enter()<CR>', { silent = true, expr = false })
 
 -- Applying codeAction to the selected region.

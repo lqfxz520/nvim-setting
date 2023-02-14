@@ -4,9 +4,10 @@ local bufferline = require('bufferline')
 
 bufferline.setup{
   options = {
-    -- mode = 'tabs',
+    mode = 'tabs',
+    separator_style = 'slant',
     diagnostics = 'coc',
-    sort_by = 'insert_at_end',
+    -- sort_by = 'insert_at_end',
     offsets = {
       {
         filetype = "coc-explorer",

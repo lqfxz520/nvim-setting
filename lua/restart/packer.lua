@@ -16,15 +16,6 @@ return require('packer').startup(function(use)
   -- Load on an autocommand event
   use { 'andymass/vim-matchup' }
 
-  -- Load on a combination of conditions: specific filetypes or commands
-  -- Also run code after load (see the "config" key)
-  use {
-    'w0rp/ale',
-    ft = { 'sh', 'zsh', 'bash', 'c', 'cpp', 'cmake', 'html', 'markdown', 'racket', 'vim', 'tex' },
-    cmd = 'ALEEnable',
-    config = 'vim.cmd[[ALEEnable]]'
-  }
-
   -- Plugins can have post-install/update hooks
   use { 'iamcco/markdown-preview.nvim', run = 'cd app && npm install',
     setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, }
