@@ -18,12 +18,16 @@ if not uiStatus then
   vim.notify("not found dapui")
   return
 end
+local widgets = require('dap.ui.widgets')
 
 local opts = { silent = true }
 nnoremap("<A-;>", function () dap.toggle_breakpoint() end, opts)
 nnoremap("<A-,>", function () dap.continue() end, opts)
 nnoremap("<A-[>", function () dap.step_into() end, opts)
 nnoremap("<A-]>", function () dap.step_over() end, opts)
+nnoremap('<F5>', function () widgets.hover() end, opts)
+nnoremap('<F6>', function () widgets.centered_float(widgets.scopes) end, opts)
+nnoremap('<F12>', function () dap.step_out() end, opts)
 
 dapVscode.setup({
   -- node_path = "node", -- Path of node executable. Defaults to $NODE_PATH, and then "node"
