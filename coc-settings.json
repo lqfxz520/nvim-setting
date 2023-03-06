@@ -11,8 +11,6 @@
   "yank.priority": 10,
   "yank.highlight.enable": false,
 
-  // "snippets.ultisnips.pythonPrompt": false,
-
   "sumneko-lua.enableNvimLuaDev": true,
   "Lua.telemetry.enable": true,
   "Lua.hint.enable": false,

@@ -30,7 +30,6 @@ return require('packer').startup(function(use)
   use {
     'nvim-treesitter/nvim-treesitter',
     requries = {
-      'andymass/vim-matchup',
       'kevinhwang91/nvim-ufo',
       'andymass/vim-matchup'
     },
