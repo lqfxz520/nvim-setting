@@ -1,5 +1,6 @@
 local Remap = require("restart.keymap")
 local nnoremap = Remap.nnoremap
+local vnoremap = Remap.vnoremap
 
 local status, dap = pcall(require, "dap")
 if not status then
@@ -26,6 +27,7 @@ nnoremap("<A-,>", function () dap.continue() end, opts)
 nnoremap("<A-[>", function () dap.step_into() end, opts)
 nnoremap("<A-]>", function () dap.step_over() end, opts)
 nnoremap('<F5>', function () widgets.hover() end, opts)
+vnoremap('<F5>', function () widgets.hover() end, opts)
 nnoremap('<F6>', function () widgets.centered_float(widgets.scopes) end, opts)
 nnoremap('<F12>', function () dap.step_out() end, opts)
 

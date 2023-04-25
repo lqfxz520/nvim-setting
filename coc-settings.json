@@ -64,5 +64,6 @@
       ]
     }
   },
-  "git.enableGutters": true
+  "git.enableGutters": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
