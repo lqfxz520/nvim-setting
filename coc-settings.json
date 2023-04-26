@@ -16,7 +16,7 @@
   "Lua.hint.enable": false,
   "semanticTokens.enable": true,
 
-  "volar.takeOverMode.enabled": true,
+  "volar.takeOverMode.enabled": false,
 
   "suggest.completionItemKindLabels": {
     "keyword":       "\uf1de",

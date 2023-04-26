@@ -124,4 +124,6 @@ return require('packer').startup(function(use)
   use { "lervag/vimtex", ft = { "tex" } }
 
   use { 'Shatur/neovim-session-manager', requires = { 'nvim-lua/plenary.nvim' } }
+
+  use { 'github/copilot.vim' }
 end)

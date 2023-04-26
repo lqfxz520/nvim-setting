@@ -47,14 +47,14 @@ nnoremap("<leader>qf", "<Plug>(coc-fix-current)", opts)
 
 -- Map function and class text objects
 -- NOTE: Requires 'textDocument.documentSymbol' support from the language server.
-xnoremap("if", "<Plug>(coc-funcobj-i)", opts)
-onoremap("if", "<Plug>(coc-funcobj-i)", opts)
-xnoremap("af", "<Plug>(coc-funcobj-a)", opts)
-onoremap("af", "<Plug>(coc-funcobj-a)", opts)
-xnoremap("ic", "<Plug>(coc-classobj-i)", opts)
-onoremap("ac", "<Plug>(coc-classobj-a)", opts)
-xnoremap("ac", "<Plug>(coc-classobj-a)", opts)
-onoremap("ac", "<Plug>(coc-classobj-a)", opts)
+-- xnoremap("if", "<Plug>(coc-funcobj-i)", opts)
+-- onoremap("if", "<Plug>(coc-funcobj-i)", opts)
+-- xnoremap("af", "<Plug>(coc-funcobj-a)", opts)
+-- onoremap("af", "<Plug>(coc-funcobj-a)", opts)
+-- xnoremap("ic", "<Plug>(coc-classobj-i)", opts)
+-- onoremap("ac", "<Plug>(coc-classobj-a)", opts)
+-- xnoremap("ac", "<Plug>(coc-classobj-a)", opts)
+-- onoremap("ac", "<Plug>(coc-classobj-a)", opts)
 
 ---@diagnostic disable-next-line: redefined-local
 local opts = { silent = true, nowait = true, expr = true, replace_keycodes = false }

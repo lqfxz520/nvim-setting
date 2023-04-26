@@ -1,4 +1,5 @@
 require('restart.set')
-require('restart.packer')
+-- require('restart.packer')
+require('restart.lazy')
 require('restart.keymap')
 require('restart.autocmd')
