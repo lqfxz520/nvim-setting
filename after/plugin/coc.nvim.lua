@@ -15,7 +15,7 @@ vim.g.coc_global_extensions = {
   'coc-yank',
   'coc-fzf-preview',
   '@yaegassy/coc-volar',
-  'coc-pairs',
+  -- 'coc-pairs',
   'coc-snippets',
   'coc-sumneko-lua',
   'coc-utools',

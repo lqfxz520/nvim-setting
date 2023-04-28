@@ -4,6 +4,7 @@ require('nvim-treesitter.configs').setup({
   context_commentstring = { enable = true },
   indent = { enable = true },
   matchup = { enable = true },
+  autotag = { enable = true },
   incremental_selection = {
     enable = true,
     keymaps = {
