@@ -100,6 +100,9 @@ require("lazy").setup({
 
   {
     'gelguy/wilder.nvim',
+    config = function ()
+      require('plugins/wilder-nvim')
+    end
   },
 
   {

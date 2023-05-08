@@ -1,1 +1,0 @@
-/home/loose/nvim-setting/init.lua
